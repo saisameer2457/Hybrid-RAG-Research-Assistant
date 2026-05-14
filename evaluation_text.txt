@@ -1,0 +1,299 @@
+Question 1:
+What is the main idea behind the Transformer architecture?
+
+Ground Truth:
+The Transformer architecture replaces recurrence and convolutions with attention mechanisms to model sequence relationships.
+
+Question 2:
+Why are Transformers more parallelizable than RNNs?
+
+Ground Truth:
+Transformers process all tokens simultaneously using self-attention, unlike RNNs which process sequences sequentially.
+
+Question 3:
+What mechanism connects the encoder and decoder in Transformers?
+
+Ground Truth:
+Attention mechanisms connect the encoder and decoder in the Transformer architecture.
+
+Question 4:
+What does BERT stand for?
+
+Ground Truth:
+BERT stands for Bidirectional Encoder Representations from Transformers.
+
+Question 5:
+What is the key advantage of BERT's bidirectional training?
+
+Ground Truth:
+BERT jointly conditions on both left and right context, enabling deep bidirectional language understanding.
+
+Question 6:
+How does BERT differ from traditional unidirectional language models?
+
+Ground Truth:
+BERT learns bidirectional contextual representations while traditional language models typically process text in a single direction.
+
+Question 7:
+Why was DistilBERT introduced?
+
+Ground Truth:
+DistilBERT was introduced to create a smaller, faster, and lighter version of BERT for resource-constrained environments.
+
+Question 8:
+How much smaller is DistilBERT compared to BERT?
+
+Ground Truth:
+DistilBERT reduces the size of BERT by approximately 40 percent.
+
+Question 9:
+What technique was used to train DistilBERT?
+
+Ground Truth:
+DistilBERT was trained using knowledge distillation during pretraining.
+
+Question 10:
+What problem does ALBERT attempt to solve?
+
+Ground Truth:
+ALBERT reduces memory consumption and training costs for large language representation models.
+
+Question 11:
+How does ALBERT improve efficiency compared to BERT?
+
+Ground Truth:
+ALBERT uses parameter reduction techniques and factorized embeddings to reduce model size and memory usage.
+
+Question 12:
+What are ELMo embeddings?
+
+Ground Truth:
+ELMo embeddings are deep contextualized word representations generated from bidirectional language models.
+
+Question 13:
+How are ELMo embeddings different from traditional word embeddings?
+
+Ground Truth:
+ELMo generates context-dependent representations for each token, unlike static embeddings that assign one vector per word.
+
+Question 14:
+Why is GPT-2 described as an unsupervised multitask learner?
+
+Ground Truth:
+GPT-2 learns multiple NLP tasks from large-scale language modeling without explicit task-specific supervision.
+
+Question 15:
+What dataset was used to train GPT-2?
+
+Ground Truth:
+GPT-2 was trained on WebText, a dataset of millions of webpages.
+
+Question 16:
+What is few-shot learning in GPT-3?
+
+Ground Truth:
+Few-shot learning allows GPT-3 to perform tasks using only a small number of examples provided in the prompt.
+
+Question 17:
+How large is GPT-3 compared to previous language models?
+
+Ground Truth:
+GPT-3 contains 175 billion parameters, making it significantly larger than earlier language models.
+
+Question 18:
+What is chain-of-thought prompting?
+
+Ground Truth:
+Chain-of-thought prompting encourages language models to generate intermediate reasoning steps before producing a final answer.
+
+Question 19:
+Why does chain-of-thought prompting improve reasoning performance?
+
+Ground Truth:
+Chain-of-thought prompting improves reasoning by decomposing complex problems into intermediate logical steps.
+
+Question 20:
+What did the Chinchilla paper conclude about scaling language models?
+
+Ground Truth:
+The Chinchilla paper concluded that compute-optimal training requires scaling both model size and training data together.
+
+Question 21:
+Why were many large language models considered undertrained according to Chinchilla?
+
+Ground Truth:
+Many large language models used too few training tokens relative to their parameter size.
+
+Question 22:
+What is the primary contribution of LLaMA?
+
+Ground Truth:
+LLaMA provides efficient foundation language models trained using publicly available datasets.
+
+Question 23:
+Why is LLaMA considered efficient?
+
+Ground Truth:
+LLaMA achieves strong performance using smaller models trained on more tokens, improving inference efficiency.
+
+Question 24:
+What problem does dropout address?
+
+Ground Truth:
+Dropout reduces overfitting in neural networks.
+
+Question 25:
+How does dropout work during training?
+
+Ground Truth:
+Dropout randomly removes units and their connections during training to prevent co-adaptation.
+
+Question 26:
+What problem was Batch Normalization designed to solve?
+
+Ground Truth:
+Batch Normalization was introduced to reduce internal covariate shift during training.
+
+Question 27:
+How does Batch Normalization improve training?
+
+Ground Truth:
+Batch Normalization stabilizes layer inputs, enabling faster training and higher learning rates.
+
+Question 28:
+What is Adam optimization?
+
+Ground Truth:
+Adam is a stochastic optimization algorithm that uses adaptive estimates of first and second moments of gradients.
+
+Question 29:
+Why is Adam widely used in deep learning?
+
+Ground Truth:
+Adam is computationally efficient, memory-efficient, and performs well on noisy and sparse gradients.
+
+Question 30:
+What problem does LSTM solve?
+
+Ground Truth:
+LSTM addresses the vanishing gradient problem in recurrent neural networks.
+
+Question 31:
+How does LSTM maintain long-term dependencies?
+
+Ground Truth:
+LSTM uses gated memory cells and constant error flow to preserve information over long time intervals.
+
+Question 32:
+What is the key idea behind ResNet?
+
+Ground Truth:
+ResNet introduces residual connections that allow networks to learn residual functions instead of direct mappings.
+
+Question 33:
+Why are residual connections useful?
+
+Ground Truth:
+Residual connections make very deep neural networks easier to optimize and improve training stability.
+
+Question 34:
+How does Vision Transformer process images?
+
+Ground Truth:
+Vision Transformer splits images into patches and treats them as token sequences for a Transformer model.
+
+Question 35:
+What was the main finding of the Vision Transformer paper?
+
+Ground Truth:
+The paper showed that pure Transformers can achieve strong image recognition performance without convolutional networks.
+
+Question 36:
+What is the purpose of the Region Proposal Network in Faster R-CNN?
+
+Ground Truth:
+The Region Proposal Network generates object proposals for object detection.
+
+Question 37:
+How did Faster R-CNN improve object detection speed?
+
+Ground Truth:
+Faster R-CNN shared convolutional features between proposal generation and object detection.
+
+Question 38:
+What are diffusion probabilistic models used for?
+
+Ground Truth:
+Diffusion probabilistic models are used for high-quality image generation and synthesis.
+
+Question 39:
+How do diffusion models generate images?
+
+Ground Truth:
+Diffusion models gradually denoise random noise to generate realistic images.
+
+Question 40:
+How do BERT and ELMo differ in contextual representation learning?
+
+Ground Truth:
+ELMo uses bidirectional LSTMs for contextual embeddings, while BERT uses bidirectional Transformers trained with masked language modeling.
+
+Question 41:
+What approaches were used by DistilBERT and ALBERT to improve Transformer efficiency?
+
+Ground Truth:
+DistilBERT used knowledge distillation, while ALBERT used parameter reduction and factorized embeddings.
+
+Question 42:
+How do GPT-2 and GPT-3 differ in task generalization?
+
+Ground Truth:
+GPT-3 demonstrated stronger few-shot learning capabilities due to larger scale and improved generalization.
+
+Question 43:
+What common problem do Batch Normalization and Dropout attempt to address?
+
+Ground Truth:
+Both Batch Normalization and Dropout improve neural network training stability and generalization.
+
+Question 44:
+How are Transformers and Vision Transformers similar?
+
+Ground Truth:
+Both models rely on self-attention mechanisms and process inputs as token sequences.
+
+Question 45:
+Why are attention mechanisms important in modern AI models?
+
+Ground Truth:
+Attention mechanisms allow models to focus on relevant parts of the input and capture long-range dependencies efficiently.
+
+Question 46:
+Why are smaller efficient language models important?
+
+Ground Truth:
+Smaller efficient language models reduce memory, computation, and inference costs while maintaining strong performance.
+
+Question 47:
+Why do very deep neural networks become difficult to train?
+
+Ground Truth:
+Very deep neural networks suffer from optimization difficulties such as vanishing gradients and unstable training.
+
+Question 48:
+Why is hybrid retrieval useful in RAG systems?
+
+Ground Truth:
+Hybrid retrieval combines keyword matching and semantic retrieval to improve retrieval robustness and relevance.
+
+Question 49:
+Why is reranking important in retrieval systems?
+
+Ground Truth:
+Reranking improves retrieval quality by prioritizing the most relevant retrieved documents.
+
+Question 50:
+How does retrieval grounding reduce hallucinations in RAG systems?
+
+Ground Truth:
+Retrieval grounding constrains generated answers to retrieved evidence from source documents.
