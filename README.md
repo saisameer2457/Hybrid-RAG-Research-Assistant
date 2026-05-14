@@ -27,6 +27,7 @@ Docs → Chunking → Embeddings → Hybrid Retriever → Reranker → LLM
 **Explanation:**
 
 * Documents are split into chunks and converted into embeddings
+* Chunks are converted into dense vector embeddings using BAAI/bge-small-en-v1.5
 * Hybrid retrieval combines keyword + semantic search
 * Reranker improves final relevance
 * LLM generates grounded answers
@@ -48,7 +49,8 @@ Docs → Chunking → Embeddings → Hybrid Retriever → Reranker → LLM
  (papers folder)              (user uploads)
         │                             │
         ↓                             ↓
- Embeddings (HF)              Embeddings (HF)
+ Embeddings (BGE)              Embeddings (BGE)
+ (bge-small-en-v1.5)          (bge-small-en-v1.5)
         │                             │
  FAISS Index                  FAISS Index
  BM25 Index                   BM25 Index
@@ -73,6 +75,29 @@ Docs → Chunking → Embeddings → Hybrid Retriever → Reranker → LLM
 * Results are then **merged and globally reranked**
 
 ---
+
+## 📊 Retrieval Evaluation Results
+
+The retrieval system was evaluated on a custom QA dataset using:
+
+* **HitRate@5**
+* **HitRate@10**
+* **MRR (Mean Reciprocal Rank)**
+
+### Final Results
+
+| Experiment | HitRate@5 | HitRate@10 | MRR |
+|---|---|---|---|
+| BM25 Only | 0.84 | 0.84 | 0.80 |
+| FAISS Only | 0.92 | 0.92 | 0.87 |
+| Hybrid | 0.94 | 0.94 | 0.87 |
+| Hybrid + Reranker | 0.94 | 0.94 | 0.90 |
+
+### Observations
+
+* FAISS semantic retrieval outperformed BM25 keyword retrieval
+* Hybrid retrieval improved recall by combining lexical and semantic search
+* Cross-encoder reranking improved ranking quality on MRR.
 
 ## ✨ Features
 
@@ -123,6 +148,9 @@ Hybrid RAG Research Assistant/
 │   └── llm.py
 │
 ├── build_index.py
+├── evaluation_text.txt
+├── evaluate.py
+├── retrieval_evaluation_results.csv
 └── streamlit_app.py
 ```
 
@@ -171,7 +199,8 @@ What is the attention mechanism in transformers?
 
 ## 🧠 Key Design Decisions
 
-* Used **hybrid retrieval** to balance precision (BM25) and semantic understanding (FAISS)
+* Used **hybrid retrieval** to balance lexical precision (BM25) and semantic understanding (FAISS)
+* Used BAAI/bge-small-en-v1.5 embeddings for improved semantic retrieval quality
 * Separated **offline and online indexes** for scalability and dynamic updates
 * Applied **cross-encoder reranking** to improve final answer quality
 * Stored FAISS indexes to enable fast query-time retrieval
