@@ -1,5 +1,0 @@
-Experiment,HitRate@5,HitRate@10,MRR
-BM25 Only,0.84,0.84,0.804
-FAISS Only,0.92,0.92,0.8716666666666667
-Hybrid,0.94,0.94,0.8756666666666666
-Hybrid + Reranker,0.94,0.94,0.9
