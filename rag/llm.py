@@ -1,29 +1,23 @@
-from huggingface_hub import InferenceClient
+import ollama
 
 
-class HuggingFaceLLM:
+class OllamaLLM:
 
-    def __init__(self, model="Qwen/Qwen2.5-7B-Instruct"):
-        self.client = InferenceClient(
-            api_key="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"
-        )
+    def __init__(self, model="qwen2.5:7b"):
         self.model = model
 
     def __call__(self, prompt):
 
-        completion = self.client.chat.completions.create(
+        completion = ollama.chat(
             model=self.model,
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ],
-            max_tokens=700,
-            temperature=0.5
+            messages=[{
+                    "role": "user", "content": prompt
+            }],
+            options={
+                "temperature": 0.5, "num_predict": 700
+            }
         )
 
-        return completion.choices[0].message.content
+        return completion["message"]["content"]
 
-
-llm = HuggingFaceLLM()
+llm = OllamaLLM()
