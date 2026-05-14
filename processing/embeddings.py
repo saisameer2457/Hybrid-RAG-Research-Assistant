@@ -14,10 +14,7 @@ def create_embeddings(chunks):
         else:
             texts.append(str(chunk))
 
-    embeddings = model.encode(
-        texts,
-        normalize_embeddings=True
-    )
+    embeddings = model.encode(texts, normalize_embeddings=True)
 
     embeddings = np.asarray(embeddings, dtype="float32")
     return embeddings
@@ -27,9 +24,6 @@ def embed_query(query):
 
     query_text = f"query: {query}"
 
-    embedding = model.encode(
-        [query_text],
-        normalize_embeddings=True
-    )[0]
+    embedding = model.encode([query_text], normalize_embeddings=True)[0]
 
     return np.asarray(embedding, dtype="float32")
